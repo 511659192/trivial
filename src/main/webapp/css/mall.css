@@ -1,0 +1,34 @@
+body {
+	background-color: #505050;
+}
+
+p, input, label, td, span, li {
+	font-family: SimSun;
+	color: 3b4149;
+	font-size: 15px;
+}
+
+.header {
+	background-color: #d9faff;
+}
+
+input {
+	height: 30px;	
+}
+
+.c1 {
+	color: red;
+}
+
+.c2 {
+	color: #ff80ff;
+}
+
+#myLogo span {
+	display: block;
+	position: absolute;
+}
+
+#myLogo span a {
+	text-decoration:none;
+}

@@ -1,0 +1,110 @@
+
+body {
+    line-height: 1em;
+}
+#demo p {
+    margin: 12px 0;
+}
+#setting .combo-arrow {
+    width: 18px;
+}
+#setting td {
+    vertical-align: middle;
+}
+.submenu a {
+    color: #444;
+    display: inline-block;
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 20px;
+    padding: 0 5px;
+    text-decoration: none;
+}
+.submenu a:hover {
+    color: #e26b1d;
+}
+.submenu-arrow, .submenu-arrow-inner {
+    border-color: transparent;
+    border-style: solid;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    width: 0;
+}
+.submenu-arrow {
+    border-bottom-color: #ddd;
+    border-width: 10px;
+    left: 0;
+    top: 0;
+}
+.submenu-arrow-inner {
+    border-bottom-color: #fafafa;
+    border-width: 8px;
+    left: 2px;
+    top: 4px;
+}
+.dp-highlighter .dp-xml {
+    background: #fff none repeat scroll 0 0;
+    border: 0 none;
+}
+.dp-highlighter .bar {
+    height: 0;
+}
+.plugins {
+    background: #fafafa none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    direction: ltr;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+.plugins ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.plugins li {
+    background: rgba(0, 0, 0, 0) url("images/gears.png") no-repeat scroll 0 center;
+    display: block;
+    float: left;
+    line-height: 150%;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+}
+.plugins a {
+    color: #444;
+    padding: 0 5px 0 20px;
+    text-decoration: none;
+}
+.plugins a:hover {
+    color: #e26b1d;
+}
+.pitem {
+    list-style-type: none;
+    margin: 0;
+    padding: 2px 0 10px 10px;
+}
+.pitem li1 {
+    font-size: 12px;
+    line-height: 18px;
+}
+.pitem a {
+    color: #444;
+    text-decoration: none;
+}
+.pitem a:hover {
+    color: #e26b1d;
+}
+.demo-tip {
+    display: none;
+}
+.demo-rtl {
+    direction: rtl;
+}
+.demo-rtl .demo-tip {
+    float: right;
+    margin: 0 0 0 8px;
+}

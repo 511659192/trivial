@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>ÎÒµÄ¶©µ¥</title>
+    <script type="text/javascript" src="jquery-2.2.3.js"></script>
+</head>
+<body>
+ aefafefa
+<script type="text/javascript">
+
+$(function(){
+		$.ajax({
+			async:false,
+			dataType:"jsonp",
+			type:"get",
+			jsonp:"jsonpcallback",
+			url:"http://localhost/mall/json",
+			success:function(ret){
+				alert(11)
+				console.info(ret)
+			},
+			error:function(ret){
+				alert(ret)
+				console.info(ret)
+				console.info(ret[0])
+			}
+		});
+	})
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+a:link, a:visited, a:active{color: #000;text-decoration: none;}
+a:hover{color: #393;text-decoration: underline;}
+body, h1, h2, h3, h4, p, ul, dl, ol, dt, dd, img, form, input, textarea ,html{margin: 0;padding: 0;}
+body{color: #000;font: 12px "Microsoft Yahei", "Arial Narrow";margin:0;padding:0;}
+img, input, select, textarea, iframe{vertical-align: middle;-ms-interpolation-mode: bicubic;}
+.l{float:left;}
+.r{float:right;}
+.both{clear:both;}
+.wrap{width:960px;margin:0 auto;}
+/*黑色透明*/.opacityHei, .opacityHei li{position:relative;}
+.opacityHei a:hover{text-decoration:none;}
+.opacityHei span, .opacityHei strong{position: relative;display:block;left:0;margin-top:-22px;height:22px;line-height:22px;color:#FFF; width:130px;}
+.opacityHei span,.cosReCom span{background:#000;filter:alpha(opacity=50);opacity:0.5;}
+.opacityHei strong{text-align:center;font-weight:normal;}
+.opacityHei strong a:link,.opacityHei strong a:visited{color:#FFF;}
+.opacityHei2, .opacityHei2 li{position:relative;}
+.opacityHei2 a:hover{text-decoration:none;}
+.opacityHei2 span, .opacityHei2 strong{position: relative;display:block;left:0;margin-top:-22px;height:22px;line-height:22px;color:#FFF;}
+.opacityHei2 span{background:#000;filter:alpha(opacity=50);opacity:0.5;}
+.opacityHei2 strong{text-align:center;font-weight:normal;}
+.opacityHei2 strong a:link,.opacityHei2 strong a:visited{color:#FFF;}
+
+.arcList{position: relative;width:628px;height:400px;overflow:hidden;}
+.arcList ul{position: absolute;top:35px;}
+.arcList li{float:left;width:136px;margin:0 28px 15px 0;}
+.arcList img{margin:0;}
+.arcList2{position: relative;width:628px;height:320px;overflow:hidden;}
+.arcList2 ul{position: absolute;top:35px;}
+.arcList2 li{float:left;width:196px;margin:0 20px 22px 0;}
+.arcList2 img{margin:0;}
+.arcTabs{float:right;}
+.arcTabs em{display:block;float:left;margin-right:6px;padding:0 10px;height:22px;line-height:22px;border:1px solid #CCC;font-style: normal;cursor: pointer;}
+.arcTabs .this{border: 1px solid #393;background: #393;color: #FFF;}
