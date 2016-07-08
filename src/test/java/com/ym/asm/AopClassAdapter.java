@@ -9,9 +9,10 @@ public class AopClassAdapter extends ClassVisitor implements Opcodes {
 		super(api, cv);
 	}
 
+	@SuppressWarnings("deprecation")
 	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
 		// 更改类名，并使新类继承原有的类。
-		super.visit(version, access, name + "_Tmp", signature, name, interfaces);
+		super.visit(version, access, name + "Tmp", signature, name, interfaces);
 		{// 输出一个默认的构造方法
 			MethodVisitor mv = super.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
 			mv.visitCode();
@@ -39,14 +40,16 @@ class AopMethod extends MethodVisitor implements Opcodes {
 		super(api, mv);
 	}
 
+	@SuppressWarnings("deprecation")
 	public void visitCode() {
 		super.visitCode();
-		this.visitMethodInsn(INVOKESTATIC, "org/more/test/asm/AopInterceptor", "beforeInvoke", "()V");
+		this.visitMethodInsn(INVOKESTATIC, "com/ym/asm/AopInterceptor", "beforeInvoke", "()V");
 	}
 
+	@SuppressWarnings("deprecation")
 	public void visitInsn(int opcode) {
 		if (opcode == RETURN) {// 在返回之前安插after 代码。
-			mv.visitMethodInsn(INVOKESTATIC, "org/more/test/asm/AopInterceptor", "afterInvoke", "()V");
+			mv.visitMethodInsn(INVOKESTATIC, "com/ym/asm/AopInterceptor", "afterInvoke", "()V");
 		}
 		super.visitInsn(opcode);
 	}
