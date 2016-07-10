@@ -59,19 +59,34 @@
 	</pluginRepositories>
 
 	<dependencies>
-	
+
+		<!-- https://mvnrepository.com/artifact/javassist/javassist -->
 		<dependency>
-		    <groupId>asm</groupId>
-		    <artifactId>asm-all</artifactId>
-		    <version>3.3.1</version>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
 		</dependency>
-	
+
+
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>5.0.0.Alpha1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm-all</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+
 		<!-- asm -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.ow2.asm</groupId> -->
-<!-- 			<artifactId>asm-all</artifactId> -->
-<!-- 			<version>5.0.3</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.ow2.asm</groupId> -->
+		<!-- <artifactId>asm-all</artifactId> -->
+		<!-- <version>5.0.3</version> -->
+		<!-- </dependency> -->
 		<!-- 添加junit单元测试包 -->
 		<dependency>
 			<groupId>junit</groupId>

@@ -15,7 +15,7 @@ import org.objectweb.asm.commons.Method;
 
 public class Helloworld extends ClassLoader implements Opcodes {
 
-	@SuppressWarnings({ "deprecation", "rawtypes" })
+	@SuppressWarnings("rawtypes")
 	@Test
 	public void main() throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException,
 			SecurityException {
