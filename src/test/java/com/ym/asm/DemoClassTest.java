@@ -3,13 +3,14 @@ package com.ym.asm;
 import org.junit.Test;
 import org.springframework.asm.ClassReader;
 import org.springframework.asm.ClassVisitor;
+import org.springframework.asm.ClassWriter;
 import org.springframework.asm.MethodVisitor;
 import org.springframework.asm.Opcodes;
 
 public class DemoClassTest {
 
 	public static void main(String[] args) {
-        System.out.println();
+        System.out.println("faefafeafe");
     }
 	
 	@Test

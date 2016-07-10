@@ -1,6 +1,5 @@
 package com.ym.asm;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -15,10 +14,11 @@ import org.objectweb.asm.commons.GeneratorAdapter;
 import org.objectweb.asm.commons.Method;
 
 public class Helloworld extends ClassLoader implements Opcodes {
-	
+
 	@SuppressWarnings({ "deprecation", "rawtypes" })
 	@Test
-	public void main() throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException {
+	public void main() throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException,
+			SecurityException {
 
 		// creates a ClassWriter for the Example public class,
 		// which inherits from Object
