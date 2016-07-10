@@ -18,7 +18,6 @@ public class ExtendTest {
 		Class clazz = loader.loadClass("com.ym.asm.TestBeanTmp");
 		TestBean bean = (TestBean) clazz.newInstance();
 		bean.halloAop();
-		bean.print();
 	}
 
 	class AopClassLoader extends ClassLoader implements Opcodes {
