@@ -54,11 +54,11 @@ public class EchoClient {
 								System.out.println("This is " + ++counter + " times receive server : [" + body + "]");
 							}
 							
-							@Override
-							public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-								System.out.println("----channelReadComplete----");
-								ctx.flush();
-							}
+//							@Override
+//							public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+//								System.out.println("----channelReadComplete----");
+//								ctx.flush();
+//							}
 						});
 					}
 				});
