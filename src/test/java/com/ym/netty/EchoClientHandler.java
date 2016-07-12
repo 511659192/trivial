@@ -10,7 +10,7 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 		UserInfo[] infos = UserInfo();
 		for (UserInfo info : infos) {
-			ctx.writeAndFlush(info);
+			ctx.write(info);
 			System.out.println("client write :" + info);
 		}
 		ctx.write("abc");

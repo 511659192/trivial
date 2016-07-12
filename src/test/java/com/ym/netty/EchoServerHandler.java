@@ -10,6 +10,7 @@ public class EchoServerHandler extends ChannelHandlerAdapter {
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		System.out.println(".....");
 		System.out.println("接到客户端信息 ：" + msg + ",counter :" + ++count);
+		ctx.write(msg);
 	}
 
 	@Override
