@@ -1,8 +1,6 @@
 package com.ym.netty.chapter6;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -43,20 +41,7 @@ public class EchoServer {
 						System.out.println("----initChannel----");
 						socketChannel.pipeline().addLast("msgpack encoder", new MsgpackEncoder());
 						socketChannel.pipeline().addLast("msgpack decoder", new MsgpackDecoder());
-						socketChannel.pipeline().addLast(new ChannelHandlerAdapter(){
-							
-							@Override
-							public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-								System.out.println("----channelRead----");
-								ctx.writeAndFlush(msg);
-							}
-							
-							@Override
-							public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-								ctx.close();
-								cause.printStackTrace();
-							}
-						});
+						socketChannel.pipeline().addLast(new EchoServerHandler());
 					}
 				});
 			ChannelFuture future = serverBootstrap.bind(port).sync();
@@ -72,7 +57,6 @@ public class EchoServer {
 		
 		@Override
 		public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-			System.out.println("----channelRead----");
 			System.out.println("server receive the msgpack message : " + msg);
 			ctx.write(msg);
 		}

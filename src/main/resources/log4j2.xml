@@ -31,7 +31,7 @@
 		<Root level="trace">
 			<AppenderRef ref="Console" />
 			<!-- <AppenderRef ref="LogFile" /> -->
-<!-- 			<AppenderRef ref="RollingFile" /> -->
+			<AppenderRef ref="RollingFile" />
 		</Root>
 	</Loggers>
 </Configuration>

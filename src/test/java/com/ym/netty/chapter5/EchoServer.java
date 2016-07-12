@@ -38,25 +38,7 @@ public class EchoServer {
 						ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
 						socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
 						socketChannel.pipeline().addLast(new StringDecoder());
-						socketChannel.pipeline().addLast(new ChannelHandlerAdapter(){
-							int counter = 0;
-							
-							@Override
-							public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-								System.out.println("----channelRead----");
-								String body = (String) msg;
-								System.out.println("This is " + ++counter + " times receive client : [" + body + "]");
-								body = body + "$_";
-								ByteBuf echo = Unpooled.copiedBuffer(body.getBytes());
-								ctx.writeAndFlush(echo);
-							}
-							
-							@Override
-							public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-								ctx.close();
-								cause.printStackTrace();
-							}
-						});
+						socketChannel.pipeline().addLast(new EchoServerHandler());
 					}
 				});
 			ChannelFuture future = serverBootstrap.bind(port).sync();
@@ -65,6 +47,26 @@ public class EchoServer {
 			e.printStackTrace();
 			bossGroup.shutdownGracefully();
 			worderGroup.shutdownGracefully();
+		}
+	}
+	
+	class EchoServerHandler extends ChannelHandlerAdapter {
+		int counter = 0;
+		
+		@Override
+		public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+			System.out.println("----channelRead----");
+			String body = (String) msg;
+			System.out.println("This is " + ++counter + " times receive client : [" + body + "]");
+			body = body + "$_";
+			ByteBuf echo = Unpooled.copiedBuffer(body.getBytes());
+			ctx.writeAndFlush(echo);
+		}
+		
+		@Override
+		public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+			ctx.close();
+			cause.printStackTrace();
 		}
 	}
 }

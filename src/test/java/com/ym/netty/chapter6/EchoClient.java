@@ -76,9 +76,9 @@ public class EchoClient {
 		public void channelActive(ChannelHandlerContext ctx) throws Exception {
 			UserInfo[] userInfos = userInfo();
 			for (UserInfo userInfo : userInfos) {
-				ctx.writeAndFlush(userInfo);
+				ctx.write(userInfo);
 			}
-//			ctx.flush();
+			ctx.flush();
 			System.out.println("----channelActive----");
 		}
 		
