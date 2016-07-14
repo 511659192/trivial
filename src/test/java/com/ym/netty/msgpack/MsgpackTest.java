@@ -1,4 +1,4 @@
-package com.ym.netty;
+package com.ym.netty.msgpack;
 
 import java.util.List;
 

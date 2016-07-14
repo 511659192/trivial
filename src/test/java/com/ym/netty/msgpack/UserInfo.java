@@ -1,4 +1,4 @@
-package com.ym.netty;
+package com.ym.netty.msgpack;
 
 public class UserInfo {
 	private String userName;

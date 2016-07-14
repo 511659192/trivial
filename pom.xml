@@ -59,16 +59,25 @@
 	</pluginRepositories>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+		<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
 		<dependency>
-		   <groupId>org.msgpack</groupId>
-		   <artifactId>msgpack-core</artifactId>
-		   <version>0.8.7</version>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>3.0.0-beta-2</version>
 		</dependency>
-		
+
+
 		<dependency>
-		   <groupId>org.msgpack</groupId>
-		   <artifactId>msgpack</artifactId>
-		   <version>0.6.7</version>
+			<groupId>org.msgpack</groupId>
+			<artifactId>msgpack-core</artifactId>
+			<version>0.8.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.msgpack</groupId>
+			<artifactId>msgpack</artifactId>
+			<version>0.6.7</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/javassist/javassist -->
 		<dependency>
