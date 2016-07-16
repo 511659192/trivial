@@ -1980,3 +1980,406 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 2016-07-16 13:16:25 [nioEventLoopGroup-2-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
 2016-07-16 13:16:25 [nioEventLoopGroup-3-1] DEBUG JavassistTypeParameterMatcherGenerator:76 - Generated: io.netty.util.internal.__matchers__.com.google.protobuf.MessageLiteOrBuilderMatcher
 2016-07-16 13:16:25 [nioEventLoopGroup-3-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
+2016-07-16 20:42:23 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 20:42:23 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 20:42:23 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 20:42:23 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1640c9a
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17766aa
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f52ff5
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fb638
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f45632
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@46efab
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@120fb16
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@447465
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@359f55
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6fa140
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@c3af8c
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@13a2c6a
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@3a191e
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@47370e
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@16f7e6e
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@d573c7
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@f1580c
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@cb8484
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1692199
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11d0422
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fa54c0
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1d2158c
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@184b4e8
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@180fe96
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1ca402a
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@13a96ba
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17dc141
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11ac882
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@161ef2b
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@9d2d48
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@107f215
+2016-07-16 20:42:23 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@a6620d
+2016-07-16 20:42:23 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 20:42:23 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 10492 (auto-detected)
+2016-07-16 20:42:23 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0x19145f0c743a2580
+2016-07-16 20:42:23 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 20:42:23 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 20:42:23 [main] DEBUG NetUtil:76 - Loopback interface: Software Loopback Interface 1
+2016-07-16 20:42:23 [main] DEBUG NetUtil:76 - Loopback address: /127.0.0.1 (primary)
+2016-07-16 20:42:23 [main] DEBUG NetUtil:76 - Loopback address: /0:0:0:0:0:0:0:1
+2016-07-16 20:42:23 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000] REGISTERED
+2016-07-16 20:42:23 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000] BIND: 0.0.0.0/0.0.0.0:8080
+2016-07-16 20:42:23 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000, /0:0:0:0:0:0:0:0:8080] ACTIVE
+2016-07-16 20:42:27 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 20:42:27 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 20:42:27 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 20:42:27 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@18b1420
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1d65a49
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1c17ff9
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@b8f5f5
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11be5be
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@883936
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1640c9a
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17766aa
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f52ff5
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fb638
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f45632
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@46efab
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@120fb16
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@447465
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@359f55
+2016-07-16 20:42:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6fa140
+2016-07-16 20:42:27 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 20:42:27 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 13088 (auto-detected)
+2016-07-16 20:42:27 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0x8a4d95f9076b887f
+2016-07-16 20:42:27 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 20:42:27 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 20:42:27 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000, /0:0:0:0:0:0:0:0:8080] RECEIVED: [id: 0x00000000, /127.0.0.1:56144 => /127.0.0.1:8080]
+2016-07-16 20:42:27 [nioEventLoopGroup-2-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
+2016-07-16 20:46:27 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 20:46:27 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 20:46:27 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 20:46:27 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11be5be
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@883936
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1640c9a
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17766aa
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f52ff5
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fb638
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f45632
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@46efab
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@120fb16
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@447465
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@359f55
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6fa140
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@c3af8c
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@13a2c6a
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@3a191e
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@47370e
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6c2934
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1053d25
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@f1580c
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@cb8484
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1692199
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11d0422
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fa54c0
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1d2158c
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@184b4e8
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@180fe96
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1ca402a
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@13a96ba
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17dc141
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11ac882
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@161ef2b
+2016-07-16 20:46:27 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@9d2d48
+2016-07-16 20:46:28 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 20:46:28 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 13788 (auto-detected)
+2016-07-16 20:46:28 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0x488514a4cd644973
+2016-07-16 20:46:28 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 20:46:28 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 20:46:28 [main] DEBUG NetUtil:76 - Loopback interface: Software Loopback Interface 1
+2016-07-16 20:46:28 [main] DEBUG NetUtil:76 - Loopback address: /127.0.0.1 (primary)
+2016-07-16 20:46:28 [main] DEBUG NetUtil:76 - Loopback address: /0:0:0:0:0:0:0:1
+2016-07-16 20:46:28 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000] REGISTERED
+2016-07-16 20:46:28 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000] BIND: 0.0.0.0/0.0.0.0:8080
+2016-07-16 20:46:28 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000, /0:0:0:0:0:0:0:0:8080] ACTIVE
+2016-07-16 20:46:32 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 20:46:32 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 20:46:32 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 20:46:32 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@f1e6e4
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@16dad47
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@18b1420
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1d65a49
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1c17ff9
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@b8f5f5
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11be5be
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@883936
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1640c9a
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17766aa
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f52ff5
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fb638
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f45632
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@46efab
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@120fb16
+2016-07-16 20:46:32 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@447465
+2016-07-16 20:46:32 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 20:46:32 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 2480 (auto-detected)
+2016-07-16 20:46:32 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0x7c0ffc62a3bdfd8b
+2016-07-16 20:46:32 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 20:46:32 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 20:46:32 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000, /0:0:0:0:0:0:0:0:8080] RECEIVED: [id: 0x00000000, /127.0.0.1:56292 => /127.0.0.1:8080]
+2016-07-16 20:46:32 [nioEventLoopGroup-2-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
+2016-07-16 20:46:32 [nioEventLoopGroup-3-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
+2016-07-16 21:02:44 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 21:02:44 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 21:02:44 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 21:02:44 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f52ff5
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fb638
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f45632
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@46efab
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@120fb16
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@447465
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@359f55
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6fa140
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@c3af8c
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@13a2c6a
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@3a191e
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@47370e
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@16f7e6e
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@d573c7
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1a41a8d
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@cb531c
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1692199
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11d0422
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fa54c0
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1d2158c
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@184b4e8
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@180fe96
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1ca402a
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@13a96ba
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17dc141
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11ac882
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@161ef2b
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@9d2d48
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@107f215
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@a6620d
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@16f7d42
+2016-07-16 21:02:44 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@88968a
+2016-07-16 21:02:44 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 21:02:44 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 8620 (auto-detected)
+2016-07-16 21:02:44 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0x5be88d3668a3a576
+2016-07-16 21:02:44 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 21:02:44 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 21:02:44 [main] DEBUG NetUtil:76 - Loopback interface: Software Loopback Interface 1
+2016-07-16 21:02:44 [main] DEBUG NetUtil:76 - Loopback address: /127.0.0.1 (primary)
+2016-07-16 21:02:44 [main] DEBUG NetUtil:76 - Loopback address: /0:0:0:0:0:0:0:1
+2016-07-16 21:02:48 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 21:02:48 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 21:02:48 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 21:02:48 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@18b1420
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1d65a49
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1c17ff9
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@b8f5f5
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11be5be
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@883936
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1640c9a
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17766aa
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f52ff5
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fb638
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1f45632
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@46efab
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@120fb16
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@447465
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@359f55
+2016-07-16 21:02:48 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6fa140
+2016-07-16 21:02:49 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 21:02:49 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 11028 (auto-detected)
+2016-07-16 21:02:49 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0xf3e968ffb5255ae9
+2016-07-16 21:02:49 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 21:02:49 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 21:02:49 [nioEventLoopGroup-2-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
+2016-07-16 21:02:49 [nioEventLoopGroup-2-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
+2016-07-16 21:04:20 [nioEventLoopGroup-2-1] WARN  DefaultChannelPipeline:151 - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:1.7.0_01]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:1.7.0_01]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:218) ~[?:1.7.0_01]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:186) ~[?:1.7.0_01]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:359) ~[?:1.7.0_01]
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:446) ~[netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:871) ~[netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:208) ~[netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119) [netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:485) [netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:452) [netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:346) [netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:794) [netty-all-5.0.0.Alpha1.jar:5.0.0.Alpha1]
+	at java.lang.Thread.run(Thread.java:722) [?:1.7.0_01]
+2016-07-16 21:06:52 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 21:06:52 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 21:06:52 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 21:06:52 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17e1b09
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@21043b
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@19cbd8d
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@160b154
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11a2c8f
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1639a4b
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@26ea08
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@cec6c9
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@15cd969
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@c5af75
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@825e02
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@ea0dfc
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@3c347a
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@9961d1
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1e4e5c6
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@a9594c
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@4b6b35
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@16ba55a
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@34bc8a
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@4646b4
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1cbe1ec
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@5d72cd
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11c2642
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@113dfa1
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1bee467
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@18567b6
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@15c057c
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6c4a08
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1707c77
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1fba4dd
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@4bfba
+2016-07-16 21:06:52 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1c757a1
+2016-07-16 21:06:53 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 21:06:53 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 13076 (auto-detected)
+2016-07-16 21:06:53 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0x155cca6ab12d3fe1
+2016-07-16 21:06:53 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 21:06:53 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 21:06:53 [main] DEBUG NetUtil:76 - Loopback interface: Software Loopback Interface 1
+2016-07-16 21:06:53 [main] DEBUG NetUtil:76 - Loopback address: /127.0.0.1 (primary)
+2016-07-16 21:06:53 [main] DEBUG NetUtil:76 - Loopback address: /0:0:0:0:0:0:0:1
+2016-07-16 21:06:53 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000] REGISTERED
+2016-07-16 21:06:53 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000] BIND: 0.0.0.0/0.0.0.0:8080
+2016-07-16 21:06:53 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000, /0:0:0:0:0:0:0:0:8080] ACTIVE
+2016-07-16 21:06:58 [main] DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2016-07-16 21:06:58 [main] DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 16
+2016-07-16 21:06:58 [main] DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2016-07-16 21:06:58 [main] DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@f14e50
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@4c8ca0
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1a4710b
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@f9a6bd
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@31f0f4
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@c2420b
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@17e1b09
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@21043b
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@19cbd8d
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@160b154
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@11a2c8f
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1639a4b
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@26ea08
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@cec6c9
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@15cd969
+2016-07-16 21:06:58 [main] TRACE NioEventLoop:46 - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@c5af75
+2016-07-16 21:06:58 [main] DEBUG DefaultChannelId:76 - -Dio.netty.machineId: ac:22:0b:70:69:d6:00:00 (auto-detected)
+2016-07-16 21:06:58 [main] DEBUG DefaultChannelId:76 - -Dio.netty.processId: 13244 (auto-detected)
+2016-07-16 21:06:58 [main] DEBUG ThreadLocalRandom:71 - -Dio.netty.initialSeedUniquifier: 0xb655b1c3ecf5f34d
+2016-07-16 21:06:58 [main] DEBUG ChannelOutboundBuffer:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent:71 - Platform: Windows
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent:76 - Java version: 7
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent:76 - -Dio.netty.noUnsafe: false
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent0:76 - java.nio.ByteBuffer.cleaner: available
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent0:76 - java.nio.Buffer.address: available
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent0:76 - sun.misc.Unsafe.theUnsafe: available
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: true
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent:76 - -Dio.netty.noJavassist: false
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent:71 - Javassist: available
+2016-07-16 21:06:58 [main] DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2016-07-16 21:06:58 [nioEventLoopGroup-2-1] DEBUG JavassistTypeParameterMatcherGenerator:76 - Generated: io.netty.util.internal.__matchers__.io.netty.buffer.ByteBufMatcher
+2016-07-16 21:06:58 [nioEventLoopGroup-2-1] DEBUG JavassistTypeParameterMatcherGenerator:76 - Generated: io.netty.util.internal.__matchers__.com.google.protobuf.MessageLiteOrBuilderMatcher
+2016-07-16 21:06:58 [nioEventLoopGroup-2-1] DEBUG LoggingHandler:71 - [id: 0x00000000, /0:0:0:0:0:0:0:0:8080] RECEIVED: [id: 0x00000000, /127.0.0.1:56730 => /127.0.0.1:8080]
+2016-07-16 21:06:58 [nioEventLoopGroup-3-1] DEBUG JavassistTypeParameterMatcherGenerator:76 - Generated: io.netty.util.internal.__matchers__.io.netty.buffer.ByteBufMatcher
+2016-07-16 21:06:58 [nioEventLoopGroup-3-1] DEBUG JavassistTypeParameterMatcherGenerator:76 - Generated: io.netty.util.internal.__matchers__.com.google.protobuf.MessageLiteOrBuilderMatcher
+2016-07-16 21:06:58 [nioEventLoopGroup-2-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
+2016-07-16 21:06:58 [nioEventLoopGroup-3-1] DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetectionLevel: simple
