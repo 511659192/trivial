@@ -59,6 +59,14 @@
 	</pluginRepositories>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.jibx/jibx-bind -->
+		<dependency>
+		    <groupId>org.jibx</groupId>
+		    <artifactId>jibx-bind</artifactId>
+		    <version>1.2.6</version>
+		</dependency>
+		
+	
 		<!-- https://mvnrepository.com/artifact/org.jboss.marshalling/jboss-marshalling -->
 <!-- 		<dependency> -->
 <!-- 		    <groupId>org.jboss.marshalling</groupId> -->
