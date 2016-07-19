@@ -73,13 +73,11 @@ public class MsgpackTest {
 		
 		class EchoServerHandler extends ChannelHandlerAdapter {
 			
-			@Override
 			public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 				System.out.println("server receive the msgpack message : " + msg);
 				ctx.write(msg);
 			}
 			
-			@Override
 			public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
 				System.out.println("----channelReadComplete----");
 				ctx.flush();
