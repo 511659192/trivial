@@ -1,5 +1,8 @@
 package com.ym.netty.marshalling;
 
+import java.io.IOException;
+
+import org.jboss.marshalling.Marshaller;
 import org.jboss.marshalling.MarshallerFactory;
 import org.jboss.marshalling.Marshalling;
 import org.jboss.marshalling.MarshallingConfiguration;
@@ -27,5 +30,12 @@ public final class MarshallingCodeCFactory {
 		MarshallerProvider provider = new DefaultMarshallerProvider(factory, configuration);
 		MarshallingEncoder encoder = new MarshallingEncoder(provider);
 		return encoder;
+	}
+	
+	public static Marshaller buildMarshaller() throws IOException {
+		MarshallerFactory factory = Marshalling.getProvidedMarshallerFactory("serial");
+		MarshallingConfiguration configuration = new MarshallingConfiguration();
+		configuration.setVersion(5);
+		return factory.createMarshaller(configuration);
 	}
 }
