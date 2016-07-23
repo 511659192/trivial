@@ -1,12 +1,11 @@
 package com.ym.netty.marshalling;
 
-import org.junit.Test;
+import java.io.Serializable;
 
-import com.ym.netty.marshalling.entity.SubScriptReq;
-import com.ym.netty.marshalling.entity.SubscriptResp;
-import com.ym.netty.protobuf.proto.SubscribeReqProto;
-import com.ym.netty.protobuf.proto.SubscribeReqProto.SubscribeReq;
-import com.ym.netty.protobuf.proto.SubscribeRespProto;
+import org.jboss.marshalling.MarshallerFactory;
+import org.jboss.marshalling.Marshalling;
+import org.jboss.marshalling.MarshallingConfiguration;
+import org.junit.Test;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
@@ -15,33 +14,27 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.codec.marshalling.DefaultMarshallerProvider;
+import io.netty.handler.codec.marshalling.DefaultUnmarshallerProvider;
+import io.netty.handler.codec.marshalling.MarshallerProvider;
+import io.netty.handler.codec.marshalling.MarshallingDecoder;
+import io.netty.handler.codec.marshalling.MarshallingEncoder;
+import io.netty.handler.codec.marshalling.UnmarshallerProvider;
 
 public class MarchallingTest {
 
 	@Test
 	public void testServer() throws Exception {
-		new SubReqServer().start(8080);
+		new SubReqServer().start(8081);
 	}
 
 	@Test
 	public void testClient() throws Exception {
-		new SubReqClient().start("127.0.0.1", 8080);
-	}
-	
-	@Test
-	public void testServer2() throws Exception {
-		new SubReqServer().bind(8080);
-	}
-
-	@Test
-	public void testClient2() throws Exception {
-		new SubReqClient().connect("127.0.0.1", 8080);
+		new SubReqClient().start("127.0.0.1", 8081);
 	}
 
 	class SubReqServer {
@@ -63,7 +56,6 @@ public class MarchallingTest {
 						public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
 							cause.printStackTrace();
 							ctx.close();
-							super.exceptionCaught(ctx, cause);
 						}
 
 						@Override
@@ -74,7 +66,7 @@ public class MarchallingTest {
 							sub.setDesc("desc");
 							sub.setSubScriptID(999);
 							sub.setRespCode("0");
-							ctx.writeAndFlush(sub);
+							ctx.write(sub);
 						}
 
 						@Override
@@ -100,59 +92,6 @@ public class MarchallingTest {
 			}
 		}
 
-		public void bind(int port) throws Exception {
-			EventLoopGroup bossGroup = new NioEventLoopGroup();
-			EventLoopGroup worderGroup = new NioEventLoopGroup();
-			try {
-				ServerBootstrap serverBootstrap = new ServerBootstrap();
-				serverBootstrap.group(bossGroup, worderGroup).channel(NioServerSocketChannel.class)
-						.option(ChannelOption.SO_BACKLOG, 100).handler(new LoggingHandler())
-						.childHandler(new ChannelInitializer<SocketChannel>() {
-
-							@Override
-							protected void initChannel(SocketChannel socketChannel) throws Exception {
-								socketChannel.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingDecoder());
-								socketChannel.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingEncoder());
-								socketChannel.pipeline().addLast(new ChannelHandlerAdapter() {
-									@Override
-									public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-										SubscribeReqProto.SubscribeReq req = (SubscribeReq) msg;
-										if ("Lilinfeng".equalsIgnoreCase(req.getUserName())) {
-											System.out.println(
-													"Service accept client subscribe req : [" + req.toString() + "]");
-											ctx.writeAndFlush(resp(req.getSubReqID()));
-										}
-
-									}
-
-									private SubscribeRespProto.SubscribeResp resp(int subReqID) {
-										SubscribeRespProto.SubscribeResp.Builder builder = SubscribeRespProto.SubscribeResp
-												.newBuilder();
-										builder.setSubReqID(subReqID);
-										builder.setRespCode(0);
-										builder.setDesc(
-												"Netty book order succed, 3 days later, sent to the designated address");
-										return builder.build();
-									}
-
-									@Override
-									public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
-											throws Exception {
-										cause.printStackTrace();
-										ctx.close();
-									}
-								});
-							}
-						});
-				ChannelFuture future = serverBootstrap.bind(port).sync();
-				future.channel().closeFuture().sync();
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				bossGroup.shutdownGracefully();
-				worderGroup.shutdownGracefully();
-			}
-		}
 	}
 
 	class SubReqClient {
@@ -180,7 +119,7 @@ public class MarchallingTest {
 						@Override
 						public void channelActive(ChannelHandlerContext ctx) throws Exception {
 							SubScriptReq req = new SubScriptReq();
-							for (int i = 0; i < 100; i++) {
+							for (int i = 0; i < 10; i++) {
 
 								req.setSubReq(999);
 								req.setProductName("productName");
@@ -216,60 +155,114 @@ public class MarchallingTest {
 				workGroup.shutdownGracefully();
 			}
 		}
-
-		public void connect(String host, int port) throws Exception {
-			EventLoopGroup group = new NioEventLoopGroup();
-			try {
-				Bootstrap bootstrap = new Bootstrap();
-				bootstrap.group(group).channel(NioSocketChannel.class).option(ChannelOption.TCP_NODELAY, true)
-						.handler(new ChannelInitializer<SocketChannel>() {
-
-							@Override
-							protected void initChannel(SocketChannel socketChannel) throws Exception {
-								socketChannel.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingDecoder());
-								socketChannel.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingEncoder());
-								socketChannel.pipeline().addLast(new ChannelHandlerAdapter() {
-									@Override
-									public void channelActive(ChannelHandlerContext ctx) throws Exception {
-										for (int i = 0; i < 10; i++) {
-											ctx.write(subReq(i));
-										}
-										ctx.flush();
-									}
-
-									@Override
-									public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-										System.out.println("Receive server response : [" + msg + "]");
-									}
-
-									@Override
-									public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-										ctx.flush();
-									}
-
-									public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
-											throws Exception {
-										cause.printStackTrace();
-										ctx.close();
-									};
-
-									private SubscribeReqProto.SubscribeReq subReq(int i) {
-										SubscribeReqProto.SubscribeReq.Builder builder = SubscribeReqProto.SubscribeReq
-												.newBuilder();
-										builder.setSubReqID(i);
-										builder.setUserName("Lilinfeng");
-										builder.setProductName("Netty book for protobuf");
-										builder.setAddress("address");
-										return builder.build();
-									}
-								});
-							}
-						});
-				ChannelFuture future = bootstrap.connect(host, port).sync();
-				future.channel().closeFuture().sync();
-			} finally {
-				group.shutdownGracefully();
-			}
-		}
 	}
+}
+
+class MarshallingCodeCFactory {
+	public static MarshallingDecoder buildMarshallingDecoder() {
+		MarshallerFactory factory = Marshalling.getProvidedMarshallerFactory("serial");
+		MarshallingConfiguration configuration = new MarshallingConfiguration();
+		configuration.setVersion(5);
+		UnmarshallerProvider provider = new DefaultUnmarshallerProvider(factory, configuration);
+		MarshallingDecoder decoder = new MarshallingDecoder(provider, 1024 * 1024);
+		return decoder;
+	}
+	public static MarshallingEncoder buildMarshallingEncoder() {
+		MarshallerFactory factory = Marshalling.getProvidedMarshallerFactory("serial");
+		MarshallingConfiguration configuration = new MarshallingConfiguration();
+		configuration.setVersion(5);
+		MarshallerProvider provider = new DefaultMarshallerProvider(factory, configuration);
+		MarshallingEncoder encoder = new MarshallingEncoder(provider);
+		return encoder;
+	}
+}
+
+class SubScriptReq implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4686274228090335845L;
+	private Integer subReq;
+	private String userName;
+	private String productName;
+	private String address;
+
+	public Integer getSubReq() {
+		return subReq;
+	}
+
+	public void setSubReq(Integer subReq) {
+		this.subReq = subReq;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "SubScriptReq [subReq=" + subReq + ", userName=" + userName + ", productName=" + productName
+				+ ", address=" + address + "]";
+	}
+
+}
+
+class SubscriptResp implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4923081103118853877L;
+	private Integer subScriptID;
+	private String respCode;
+	private String desc;
+
+	public Integer getSubScriptID() {
+		return subScriptID;
+	}
+
+	public void setSubScriptID(Integer subScriptID) {
+		this.subScriptID = subScriptID;
+	}
+
+	public String getRespCode() {
+		return respCode;
+	}
+
+	public void setRespCode(String respCode) {
+		this.respCode = respCode;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	@Override
+	public String toString() {
+		return "SubscriptResp [subScriptID=" + subScriptID + ", respCode=" + respCode + ", desc=" + desc + "]";
+	}
+
 }
