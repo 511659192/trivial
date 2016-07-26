@@ -268,7 +268,7 @@ class LoginAuthReqHandler extends ChannelHandlerAdapter {
 			throws Exception {
 		NettyMessage message = (NettyMessage)msg;
 		if(message.getHeader() != null && message.getHeader().getType() == (byte)2){
-			System.out.println("Received from server response");
+			System.out.println("Received from server response" + message.getBody());
 		}
 		ctx.fireChannelRead(msg);
 	}
