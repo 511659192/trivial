@@ -16,6 +16,7 @@ public class Server {
 		if(serverHandle!=null)
 			return;
 		serverHandle = new AsyncServerHandler(port);
+		System.out.println("new AsyncServerHandler(port) " + serverHandle.hashCode());
 		new Thread(serverHandle,"Server").start();
 	}
 	public static void main(String[] args){

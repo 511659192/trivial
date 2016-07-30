@@ -7,14 +7,18 @@ import java.nio.channels.CompletionHandler;
 public class AcceptHandler implements CompletionHandler<AsynchronousSocketChannel, AsyncServerHandler> {
 	@Override
 	public void completed(AsynchronousSocketChannel channel,AsyncServerHandler serverHandler) {
+		System.out.println("AcceptHandler.completed " + channel.hashCode() + "|" + serverHandler.hashCode());
 		//继续接受其他客户端的请求
 		Server.clientCount++;
 		System.out.println("连接的客户端数：" + Server.clientCount);
+		System.out.println("serverHandler.channel.accept(serverHandler, this) " + serverHandler.hashCode() + "|" + this.hashCode());
 		serverHandler.channel.accept(serverHandler, this);
 		//创建新的Buffer
 		ByteBuffer buffer = ByteBuffer.allocate(1024);
 		//异步读  第三个参数为接收消息回调的业务Handler
-		channel.read(buffer, buffer, new ReadHandler(channel));
+		CompletionHandler<Integer, ByteBuffer> handler = new ReadHandler(channel);
+		System.out.println("channel.read(buffer, buffer, handler) " + buffer.hashCode() + "|" + handler.hashCode());
+		channel.read(buffer, buffer, handler);
 	}
 	@Override
 	public void failed(Throwable exc, AsyncServerHandler serverHandler) {

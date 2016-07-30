@@ -9,6 +9,8 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * NIO客户端
  * 
@@ -98,6 +100,7 @@ public class ClientHandle implements Runnable {
 				else
 					System.exit(1);
 			}
+			System.out.println(JSON.toJSONString(key));
 			// 读消息
 			if (key.isReadable()) {
 				// 创建ByteBuffer，并开辟一个1M的缓冲区

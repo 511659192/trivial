@@ -16,6 +16,7 @@ public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
 	//读取到消息后的处理
 	@Override
 	public void completed(Integer result, ByteBuffer attachment) {
+		System.out.println("ReadHandler.completed " + result.hashCode() + "|" + attachment.hashCode());
 		//flip操作
 		attachment.flip();
 		//根据
@@ -43,7 +44,7 @@ public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
 		writeBuffer.put(bytes);
 		writeBuffer.flip();
 		//异步写数据 参数与前面的read一样
-		channel.write(writeBuffer, writeBuffer,new CompletionHandler<Integer, ByteBuffer>() {
+		CompletionHandler<Integer, ByteBuffer> handler = new CompletionHandler<Integer, ByteBuffer>() {
 			@Override
 			public void completed(Integer result, ByteBuffer buffer) {
 				//如果没有发送完，就继续发送直到完成
@@ -63,7 +64,9 @@ public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
 				} catch (IOException e) {
 				}
 			}
-		});
+		};
+		System.out.println("channel.write(writeBuffer, writeBuffer,handler) " + writeBuffer.hashCode() + "|" + handler.hashCode() + "|" + channel.hashCode());
+		channel.write(writeBuffer, writeBuffer,handler);
 	}
 	@Override
 	public void failed(Throwable exc, ByteBuffer attachment) {
