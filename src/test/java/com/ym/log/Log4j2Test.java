@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Log4j2Test {
 
-    private static Logger logger = LoggerFactory.getLogger(Log4j2Test.class);
+    private static Logger logger = LoggerFactory.getLogger("asyncLogger");
 
     public static void main(String[] args) {
         logger.error("afaefafe");
