@@ -59,13 +59,33 @@
 	</pluginRepositories>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-legacy</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jmock/jmock-junit4 -->
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit4</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/org.jibx/jibx-bind -->
 		<dependency>
 		    <groupId>org.jibx</groupId>
 		    <artifactId>jibx-bind</artifactId>
 		    <version>1.2.6</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>3.3.6</version>
+		</dependency>
 	
 		<!-- https://mvnrepository.com/artifact/org.jboss.marshalling/jboss-marshalling -->
 		
@@ -147,11 +167,6 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.lmax</groupId>
-			<artifactId>disruptor</artifactId>
-			<version>3.3.4</version>
 		</dependency>
 		<!-- log4j2配置 JDK1.6只能使用2.3版本，更高版本需要JDK1.7及以上才可以 -->
 		<dependency>
