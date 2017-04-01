@@ -6584,3 +6584,22 @@ io.netty.handler.codec.TooLongFrameException: Adjusted frame length exceeds 1024
 2017-03-03 15:22:48 !!! [main] ERROR                                              Log4j2Test:15 - afaefafe
 2017-03-03 15:22:56 !!! [main] ERROR                                              Log4j2Test:15 - afaefafe
 2017-03-03 15:23:22 [main] ERROR Log4j2Test:15 - afaefafe
+2017-03-03 16:38:56 [main] ERROR Log4j2Test:15 - afaefafe
+2017-03-03 16:41:10 [main] ERROR Log4j2Test:15 - afaefafe
+2017-03-03 16:41:38 [main] ERROR Log4j2Test:15 - afaefafe
+2017-03-03 16:43:47 [main] ERROR Log4j2Test:15 - afaefafe
+2017-03-03 16:48:44 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-03 16:49:12 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-03 16:52:27 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 13:48:13 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 13:49:50 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 13:51:25 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 13:51:41 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 13:52:34 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 14:09:59 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 14:50:33 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 14:56:54 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 15:01:58 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 15:03:37 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 15:05:27 [main] ERROR asyncLogger:15 - afaefafe
+2017-03-10 15:07:35 [main] ERROR asyncLogger:15 - afaefafe
