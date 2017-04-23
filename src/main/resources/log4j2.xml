@@ -41,6 +41,7 @@
 		<!-- pattern layout actually uses location, so we need to include it -->
 		<AsyncLogger name="asyncLogger" level="trace" includeLocation="true">
 			<AppenderRef ref="asyncAppender"/>
+			<AppenderRef ref="Console"/>
 		</AsyncLogger>
 	</Loggers>
 </Configuration>
