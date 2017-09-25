@@ -12,6 +12,12 @@ import org.junit.Test;
 
 public class BioTest {
 
+	@org.junit.Test
+	public void test22 (){
+		System.out.println(new Date(1492532293000L).toLocaleString());
+	}
+
+
 	@Test
 	public void testServer() throws IOException {
 		
