@@ -1,4 +1,4 @@
-package com.jd.biz.service.util.executor;
+package com.ym.netty.executor;
 
 import io.netty.util.internal.SystemPropertyUtil;
 import org.slf4j.Logger;

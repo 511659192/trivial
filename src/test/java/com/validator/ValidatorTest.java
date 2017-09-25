@@ -2,6 +2,8 @@ package com.validator;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.google.common.base.Optional;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.junit.Test;
 
@@ -17,7 +19,12 @@ import java.util.Set;
 public class ValidatorTest {
 
     public static void main(String[] args) {
-        System.out.println(Integer.MAX_VALUE);
+        String text = "zKPJImknebGuH03fG++wEKU3qrrw37r0SDrChUlu63MxyYZ5QA/zy3eDgvsmjbb2vm+Rfyg5Jvaq\nVdnQVBLKJJB2B/1uWZR5SHb9EjbxQe1ztz9VMsbLjlhIrqKcbz6TnGJ0p07jGe1Xrf3ILB7uwAUL\nvvzYNq4kJ06fXzOtnWQ=";
+        System.out.println(JSON.toJSONString(text));
+        System.out.println(JSON.toJSONString(text, SerializerFeature.DisableCheckSpecialChar));
+        System.out.println(JSON.toJSONString(text, SerializerFeature.BrowserCompatible));
+
+//        System.out.println(Integer.MAX_VALUE);
 //        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 //        Validator validator = factory.getValidator();
 //        UserModel userModel = new UserModel();
@@ -33,7 +40,10 @@ public class ValidatorTest {
         Validator validator = factory.getValidator();
         User user = new User();
         Set<ConstraintViolation<User>> set = validator.validate(user);
-        set = validator.validate(user, Group.class);
+        set = validator.validate(user, Default.class);
+        for (ConstraintViolation<User> userConstraintViolation : set) {
+            System.out.println(userConstraintViolation.getMessage());
+        }
         System.out.println(set.size());
     }
 }

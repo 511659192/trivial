@@ -1,7 +1,10 @@
 package com.ym.netty;
 
 import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.*;
 
+import com.google.common.collect.Maps;
 import org.junit.Test;
 
 import io.netty.bootstrap.Bootstrap;
@@ -20,12 +23,42 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 public class BaseTest {
-	
+
+	public static void main(String[] args) throws Exception {
+		ExecutorService executorService = Executors.newCachedThreadPool();
+		Future f1 = executorService.submit(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("11111");
+			}
+		});
+		Future f2 = executorService.submit(new Callable() {
+			@Override
+			public Object call() throws Exception {
+				System.out.println("33333");
+				return "22222";
+			}
+		});
+		final Map<String, Object> map = Maps.newHashMap();
+		Future f3 = executorService.submit(new Runnable() {
+			@Override
+			public void run() {
+				map.put("12", "32");
+				System.out.println("44444");
+			}
+		}, map);
+//		System.out.println(f1.get());
+		System.out.println(f2.get());
+//		System.out.println(f3.get());
+		executorService.shutdown();
+	}
+
+
 	@Test
 	public void testTimeServer() throws Exception {
 		new TimeServer().bind(8080);
 	}
-	
+
 	@Test
 	public void testTimeClient() throws Exception {
 		new TimeClient().connect(8080, "127.0.0.1");

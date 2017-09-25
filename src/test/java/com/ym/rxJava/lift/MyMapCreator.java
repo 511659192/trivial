@@ -10,55 +10,41 @@ import rx.functions.Func1;
 
 public class MyMapCreator {
 
+    public MyMap create(Func1<Integer, String> transfer) {
+        return new MyMap();
+    }
 
+    public MyMap create() {
+        return new MyMap();
+    }
 
-    class MyMap<T,R> implements Observable.Operator<R, T> {
+    class MyMap implements Observable.Operator<String, Integer> {
 
-        private Func1<T, R> transformer;
+        private Func1<Integer, String> transformer;
 
         public MyMap() {
         }
 
-        public MyMap(Func1<T, R> transformer) {
+        public MyMap(Func1<Integer, String> transformer) {
             this.transformer = transformer;
         }
 
-        public <T, R> MyMap<T, R> create(Func1<T, R> transformer) {
-            return new MyMap<T, R>(transformer);
+        public MyMap create(Func1<Integer, String> transformer) {
+            return new MyMap(transformer);
         }
 
         @Override
-        public Subscriber<? super T> call(Subscriber<? super R> subscriber) {
-            return new InnerSubscriber<T>(subscriber);
+        public Subscriber<? super Integer> call(Subscriber<? super String> subscriber) {
+            return new AbstractSubscriber<Integer, String>(subscriber, Transfer.instance){}.instance();
         };
-
-        class InnerSubscriber<V> extends Subscriber<V> {
-
-            private Subscriber<? super R> child;
-
-            public InnerSubscriber(Subscriber<? super R> child) {
-                this.child = child;
-            }
-
-            @Override
-            public void onCompleted() {
-                if (!child.isUnsubscribed())
-                    child.onCompleted();
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                if (!child.isUnsubscribed())
-                    child.onError(e);
-            }
-
-            @Override
-            public void onNext(V t) {
-                if (!child.isUnsubscribed()){
-                    child.onNext(transformer.call(((T) t)));
-                }
-            }
-        }
     }
 
+    static class Transfer implements Func1<java.lang.Integer, java.lang.String> {
+
+        private static Transfer instance = new Transfer();
+        @Override
+        public java.lang.String call(java.lang.Integer integer) {
+            return integer + "faefafe";
+        }
+    }
 }

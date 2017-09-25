@@ -1,5 +1,7 @@
 package com.ym.asych;
 
+import org.junit.Test;
+
 /**
  * 延时加法
  * @author lixiaohui
@@ -7,7 +9,21 @@ package com.ym.asych;
  */
 public class DelayAdder {
 
+
     public static void main(String[] args) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (;;) {
+                    System.out.println("00000");
+                }
+            }
+        }).start();
+        System.out.println("11111");
+    }
+
+    @Test
+    public void test() {
         new DelayAdder().add(10 * 1000, 1, 2).addListener(new IFutureListener<Integer>() {
 
             @Override

@@ -15,6 +15,7 @@
  */
 package com.lmax.disruptor.dsl;
 
+import com.alibaba.fastjson.JSON;
 import com.lmax.disruptor.*;
 import com.lmax.disruptor.dsl.stubs.*;
 import com.lmax.disruptor.support.TestEvent;
@@ -79,6 +80,7 @@ public class DisruptorTest
             @Override
             public void onEvent(final TestEvent event, final long sequence, final boolean endOfBatch) throws Exception
             {
+                System.out.println("1111 " + event.hashCode());
                 eventCounter.countDown();
             }
         });
@@ -89,6 +91,7 @@ public class DisruptorTest
              @Override
              public void translateTo(final TestEvent event, final long sequence)
              {
+                 System.out.println("2222 "+ event.hashCode());
                  lastPublishedEvent = event;
              }
          });
@@ -101,6 +104,7 @@ public class DisruptorTest
              @Override
              public void translateTo(final TestEvent event, final long sequence)
              {
+                 System.out.println("3333 "+ event.hashCode());
                  lastPublishedEvent = event;
              }
          });
@@ -258,7 +262,7 @@ public class DisruptorTest
         EventHandler<TestEvent> handlerWithBarrier = new EventHandlerStub<TestEvent>(countDownLatch);
 
         disruptor.handleEventsWith(handler1, handler2);
-        disruptor.after(handler1, handler2).handleEventsWith(handlerWithBarrier);
+        disruptor.after(handler1).handleEventsWith(handlerWithBarrier);
 
         ensureTwoEventsProcessedAccordingToDependencies(countDownLatch, handler1, handler2);
     }

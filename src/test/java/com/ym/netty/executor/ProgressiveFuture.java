@@ -1,4 +1,4 @@
-package com.jd.biz.service.util.executor;
+package com.ym.netty.executor;
 
 /**
  * A {@link Future} which is used to indicate the progress of an operation.

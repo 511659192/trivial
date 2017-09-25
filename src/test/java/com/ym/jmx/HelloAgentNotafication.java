@@ -13,7 +13,7 @@ import javax.management.MBeanServer;
 import javax.management.MBeanServerFactory;
 import javax.management.ObjectName;
 import com.sun.jdmk.comm.HtmlAdaptorServer;
-public class HelloAgent2 {
+public class HelloAgentNotafication {
     public static void main(String args[]) throws Exception{
         MBeanServer server = MBeanServerFactory.createMBeanServer();
         ObjectName helloName = new ObjectName("chengang:name=HelloWorld");

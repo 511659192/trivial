@@ -1,4 +1,4 @@
-package com.jd.biz.service.util.executor;
+package com.ym.netty.executor;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
