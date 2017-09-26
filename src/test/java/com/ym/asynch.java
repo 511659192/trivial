@@ -1,11 +1,10 @@
 package com.ym;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import rx.Observable;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
-import static javax.swing.text.html.HTML.Tag.S;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author yangmeng44
@@ -13,25 +12,15 @@ import static javax.swing.text.html.HTML.Tag.S;
  */
 public class asynch {
 
-    public static void main(String[] args) {
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        // 通过submit方法提交任务
-        Future<String> future = executorService.submit(new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                System.out.println("call " + Thread.currentThread().getId());
-                return "hello world";
-            }
-        });
-
-        System.out.println("等待返回的结果");
-        try {
-            System.out.println("out1 " + Thread.currentThread().getId());
-            System.out.println("返回的结果," + future.get());
-            System.out.println("out2 " + Thread.currentThread().getId());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+    public static void main(String[] args) throws InterruptedException {
+        Observable.from(new Integer[]{1, 2, 3, 4})
+                .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+                .observeOn(Schedulers.computation()) // 指定 Subscriber 的回调发生在主线程
+                .subscribe(new Action1<Integer>() {
+                    @Override
+                    public void call(Integer number) {
+                        System.out.println(number);
+                    }
+                });
     }
 }
