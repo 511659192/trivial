@@ -14,7 +14,7 @@ import java.util.concurrent.*;
  */
 public class CustomWorkerTest {
 
-    static final ScheduledExecutorService genericScheduler;
+    public static final ScheduledExecutorService genericScheduler;
     static {
         genericScheduler = Executors.newScheduledThreadPool(1, r -> {
             Thread t = new Thread(r, "GenericScheduler");
@@ -23,7 +23,7 @@ public class CustomWorkerTest {
         });
     }
 
-    class CustomWorker extends Scheduler.Worker {
+    static class CustomWorker extends Scheduler.Worker {
         final ExecutorService exec;                             // (1)
         final CompositeSubscription tracking;                   // (2)
         final boolean shutdown;                                 // (3)
