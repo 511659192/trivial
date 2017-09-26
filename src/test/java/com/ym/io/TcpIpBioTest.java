@@ -1,5 +1,7 @@
 package com.ym.io;
 
+import org.junit.*;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -8,6 +10,12 @@ import java.net.Socket;
 import java.util.concurrent.TimeUnit;
 
 public class TcpIpBioTest {
+
+	@org.junit.Test
+	public void test() {
+		System.out.println(25 / 10);
+		System.out.println(25 % 10);
+	}
 
 	public static void main(String[] args) throws Exception {
 		new Thread(new Runnable() {
