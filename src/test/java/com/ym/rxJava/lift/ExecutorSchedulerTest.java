@@ -14,6 +14,8 @@ import java.util.Queue;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static javafx.scene.input.KeyCode.J;
+
 /**
  * Created by cdyangmeng on 2017/9/26.
  */
@@ -23,7 +25,7 @@ public class ExecutorSchedulerTest {
     static {
         genericScheduler = Executors.newScheduledThreadPool(1, r -> {
             Thread t = new Thread(r, "GenericScheduler");
-            t.setDaemon(true);
+//            t.setDaemon(true);
             return t;
         });
     }
@@ -55,7 +57,6 @@ public class ExecutorSchedulerTest {
                 sa.add(Subscriptions.create(() -> tracking.remove(sa)));        // (1)
 
                 queue.offer(sa);                            // (2)
-
                 sa.add(Subscriptions.create(() -> queue.remove(sa)));           // (3)
 
                 if (wip.getAndIncrement() == 0) {           // (4)
@@ -66,6 +67,7 @@ public class ExecutorSchedulerTest {
             }
             @Override
             public Subscription schedule(Action0 action, long delayTime, TimeUnit unit) {
+                System.out.println("on" + Thread.currentThread().getId() + " ------------");
 
                 if (delayTime <= 0) {
                     return schedule(action);                      // (1)
@@ -88,7 +90,10 @@ public class ExecutorSchedulerTest {
                 Future<?> f = schedex.schedule(() -> {            // (6)
                     queue.offer(sa);                              // (7)
                     sa.add(Subscriptions.create(() -> queue.remove(sa)));
-                    if (wip.getAndIncrement() == 0) {
+                    int sign = wip.getAndIncrement();
+                    System.out.println("on" + Thread.currentThread().getId() + " sign " + sign);
+                    if (sign == 0) {
+                        System.out.println("on" + Thread.currentThread().getId() + " +++++++++++++++++");
                         exec.execute(this);
                     }
                 }, delayTime, unit);
@@ -99,15 +104,19 @@ public class ExecutorSchedulerTest {
             @Override
             public void run() {
                 do {
+                    System.out.println("on" + Thread.currentThread().getId() + " run wip " + wip.get());
                     if (isUnsubscribed()) {                   // (1)
                         queue.clear();
                         return;
                     }
                     ScheduledAction sa = queue.poll();        // (2)
+                    System.out.println("on" + Thread.currentThread().getId() + " run sa " + (sa == null));
                     if (sa != null && !sa.isUnsubscribed()) {
+                        System.out.println("on" + Thread.currentThread().getId() + " ****************");
                         sa.run();                             // (3)
                     }
                 } while (wip.decrementAndGet() > 0);          // (4)
+                System.out.println("on" + Thread.currentThread().getId() + " run end");
             }
 
             @Override
@@ -137,7 +146,7 @@ public class ExecutorSchedulerTest {
                         } catch (InterruptedException ex) {
                             ex.printStackTrace();
                         }
-                        System.out.println(Thread.currentThread());
+                        System.out.println("on" + Thread.currentThread().getId() + " testing");
                     });
 
             TestSubscriber<Integer> ts1 = new TestSubscriber<>();
@@ -147,18 +156,9 @@ public class ExecutorSchedulerTest {
             source.subscribe(ts1);
             source.subscribe(ts2);
             source.subscribe(ts3);
-
-            ts1.awaitTerminalEvent();
-            ts1.assertNoErrors();
-            ts1.assertValue(1);
-
-            ts2.awaitTerminalEvent();
-            ts2.assertNoErrors();
-            ts2.assertValue(1);
-
-            ts3.awaitTerminalEvent();
-            ts3.assertNoErrors();
-            ts3.assertValue(1);
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         } finally {
             exec.shutdown();
         }
