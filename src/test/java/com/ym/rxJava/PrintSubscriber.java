@@ -17,7 +17,7 @@ public class PrintSubscriber extends Subscriber {
     }
     @Override
     public void onError(Throwable e) {
-        e.printStackTrace();
+//        e.printStackTrace();
         System.out.println(name + ": Error: " + e);
     }
     @Override
