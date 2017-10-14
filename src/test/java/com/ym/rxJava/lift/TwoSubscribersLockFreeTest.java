@@ -41,12 +41,13 @@ public class TwoSubscribersLockFreeTest {
                     State next;
                     Subscription old;
                     if (first) {
-                        next = new State(s, current.s2, false);     // (3)
-                        old = current.s1;                           // (4)
+                        next = new State(s, current.s2, false);     // (3)  基于当前状态创建一个新的状态，替换相应的 subscription
+                        old = current.s1;                           // (4) 局部变量保存被替换的 subscription
                     } else {
                         next = new State(current.s1, s, false);
                         old = current.s2;
                     }
+                    // 通过 CAS 操作来切换新旧状态，如果失败，说明当前有并发线程成功修改了状态，继续循环进行尝试
                     if (state.compareAndSet(current, next)) {       // (5)
                         if (old != null) {
                             old.unsubscribe();                      // (6)
@@ -94,7 +95,7 @@ public class TwoSubscribersLockFreeTest {
     @Test
     public void testTwoSubscribersLockFree2() {
         class TwoSubscribersLockFree2 implements Subscription {
-            final class State {
+            class State {
                 final Subscription s1;
                 final Subscription s2;
 
