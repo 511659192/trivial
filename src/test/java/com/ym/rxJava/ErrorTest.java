@@ -138,6 +138,7 @@ public class ErrorTest {
                 (resource) -> System.out.println("Disposed: " + resource));
 
         values
+                .just("aefafeafeafeafe")
                 .subscribe(
                         v -> System.out.println(v),
                         e -> System.out.println(e));

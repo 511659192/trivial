@@ -2,7 +2,9 @@ package com.ym.rxJava;
 
 import org.junit.Test;
 import rx.Observable;
+import rx.Subscriber;
 import rx.Subscription;
+import rx.functions.Func1;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -167,13 +169,52 @@ public class ComposeTest {
         Observable.switchOnNext(
                 Observable.interval(100, TimeUnit.MILLISECONDS)
                         .map(i -> Observable.interval(30, TimeUnit.MILLISECONDS).map(i2 -> {
-                            System.out.println("i2:" + i2 + " i " + i);
+                            System.out.println("i2:" + i2 + " i:" + i);
                             return i;
                         }))
-                )
+        )
                 .take(9)
                 .subscribe(new PrintSubscriber("testSwitchOnNext"));
         System.in.read();
+    }
+
+    @Test
+    public void testSwitchOnNext2() throws Exception {
+        //每隔500毫秒产生一个observable
+        Observable<Observable<Long>> observable = Observable.timer(0, 500, TimeUnit.MILLISECONDS)
+                .map(new Func1<Long, Observable<Long>>() {
+                    @Override
+                    public Observable<Long> call(Long aLong) {
+                        System.out.println("L1:" + aLong);
+                        //每隔200毫秒产生一组数据（0,10,20,30,40)
+                        return Observable.timer(0, 200, TimeUnit.MILLISECONDS).map(new Func1<Long, Long>() {
+                            @Override
+                            public Long call(Long aLong) {
+                                System.out.println("L2:" + aLong);
+                                return aLong * 10;
+                            }
+                        }).take(5);
+                    }
+                }).take(2);
+
+        Observable.switchOnNext(observable)
+                .subscribe(new Subscriber<Long>() {
+                    @Override
+                    public void onCompleted() {
+                        System.out.println("Sequence complete.");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+                        System.out.println("Next:" + aLong);
+                    }
+                });
+        TimeUnit.SECONDS.sleep(5);
     }
 
     @Test
