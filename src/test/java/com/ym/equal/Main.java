@@ -1,5 +1,11 @@
 package com.ym.equal;
 
+import com.google.common.base.Objects;
+import org.jctools.queues.MpscArrayQueue;
+import org.jctools.queues.SpmcArrayQueue;
+import rx.internal.util.unsafe.MpscLinkedQueue;
+
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,18 +16,15 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Person p1 = new Person("name", 11);
-        Person p2 = new Person("name", 11);
-        System.out.println(p1.equals(p2));
-        System.out.println(p1 == p2);
+        SpmcArrayQueue<Integer> queue = new SpmcArrayQueue<>(2);
+        queue.offer(1);
+        queue.offer(2);
+        queue.offer(3);
+        System.out.println(queue.poll());
 
-        Map<Person, String> map = new HashMap<>();
-        map.put(p1, "aa");
-        System.out.println(map.get(p2));
-        Person p3 = new Person("name", 12);
-        System.out.println(map.get(p3));
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
     }
-
 
 
 }
