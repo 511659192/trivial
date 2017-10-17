@@ -7,5 +7,6 @@ public class Work {
 
     public static void main(String[] args) {
         System.out.println("acion1");
+        System.out.println("action2");
     }
 }
