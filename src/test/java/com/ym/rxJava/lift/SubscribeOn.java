@@ -1,12 +1,11 @@
 package com.ym.rxJava.lift;
 
+import com.ym.rxJava.PrintSubscriber;
 import org.junit.Test;
-import rx.Scheduler;
+import rx.Observable;
 import rx.functions.Action1;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-import java.util.Observable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -99,7 +98,7 @@ public class SubscribeOn {
 
     @Test
     public void testSubscribeOn() throws Exception {
-        rx.Observable.just(1, 2)
+        Observable.just(1, 2)
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Action1<Integer>() {
                     @Override
@@ -108,5 +107,14 @@ public class SubscribeOn {
                     }
                 });
         System.in.read();
+    }
+
+    @Test
+    public void testJust() throws Exception {
+        Observable.just(1, 2,3)
+                .observeOn(Schedulers.newThread())
+                .subscribe(new PrintSubscriber("afeafafe"));
+        System.in.read();
+
     }
 }

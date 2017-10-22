@@ -1,16 +1,8 @@
 package com.ym.hystrix;
 
 import com.netflix.hystrix.*;
-import com.netflix.hystrix.exception.HystrixBadRequestException;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
-import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by ym on 2017/10/16.
@@ -19,13 +11,13 @@ public class HystrixTest {
 
     public static void main(String[] args) {
         RestTemplate restTemplate = new RestTemplate();
-        HystrixCommand.Setter commandConfig;
+        HystrixCommand.Setter setter;
         // 设置Command名称 //
 
-        commandConfig = HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ExampleGroup")).andCommandKey(
+        setter = HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ExampleGroup")).andCommandKey(
                 HystrixCommandKey.Factory.asKey("GetUserCommand"));
         HystrixCommandProperties.Setter commandProperties = HystrixCommandProperties.Setter();
-        commandConfig.andCommandPropertiesDefaults(commandProperties);
+        setter.andCommandPropertiesDefaults(commandProperties);
 
         commandProperties.withExecutionTimeoutEnabled(false);
         // 设置短路规则 //
@@ -44,7 +36,7 @@ public class HystrixTest {
             // 线程超时，默认为1秒，设为3秒方便演示.
             commandProperties.withExecutionIsolationThreadTimeoutInMilliseconds(300000);
             // 线程池属性， 线程池大小，默认为10，无改变。待执行队列的大小，默认为5，无改变.
-            commandConfig.andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter().withCoreSize(10)
+            setter.andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter().withCoreSize(10)
                     .withQueueSizeRejectionThreshold(5));
         } else { // 使用原有的调用者线程
             // 依靠RestTemplate本身的超时机制，设为10秒。
@@ -54,7 +46,7 @@ public class HystrixTest {
             commandProperties.withExecutionIsolationStrategy(HystrixCommandProperties.ExecutionIsolationStrategy.SEMAPHORE)
                     .withExecutionIsolationSemaphoreMaxConcurrentRequests(10);
         }
-        GetUserCommand command = new GetUserCommand(commandConfig, restTemplate, 1L);
+        GetUserCommand command = new GetUserCommand(setter, restTemplate, 1L);
         UserDTO dto = command.execute();
         System.out.println("---------------------");
         System.out.println(dto.getName());

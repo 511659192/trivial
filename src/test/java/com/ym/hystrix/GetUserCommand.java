@@ -8,8 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * Created by ym on 2017/10/16.
  */
@@ -23,8 +21,8 @@ public class GetUserCommand extends HystrixCommand<UserDTO>  {
     /**
      * 构造函数，注入配置、用到的资源访问类和命令参数.
      */
-    protected GetUserCommand(HystrixCommand.Setter commandConfig, RestTemplate restTemplate, Long id) {
-        super(commandConfig);
+    protected GetUserCommand(HystrixCommand.Setter setter, RestTemplate restTemplate, Long id) {
+        super(setter);
         this.restTemplate = restTemplate;
         this.id = id;
     }
@@ -70,5 +68,10 @@ public class GetUserCommand extends HystrixCommand<UserDTO>  {
         dto.setName("yangmeng2");
         dto.setTeamId(200L);
         return dto;
+    }
+
+    @Override
+    protected String getCacheKey() {
+        return super.getCacheKey();
     }
 }
