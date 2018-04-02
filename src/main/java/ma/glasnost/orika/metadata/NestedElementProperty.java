@@ -1,0 +1,110 @@
+/*
+ * Orika - simpler, better and faster Java bean mapping
+ *
+ * Copyright (C) 2011-2013 Orika authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package ma.glasnost.orika.metadata;
+
+import ma.glasnost.orika.property.PropertyResolverStrategy;
+
+/**
+ * NestedElementProperty represents a property which belongs to the type of a nested list/array/map element
+ * within another type.
+ * 
+ * @author mattdeboer
+ *
+ */
+public class NestedElementProperty extends Property {
+
+    private final Property elementProperty;
+    
+    /**
+     * @param owningProperty
+     * @param elementProperty
+     * @param resolver 
+     */
+    public NestedElementProperty(Property owningProperty, Property elementProperty, PropertyResolverStrategy resolver) {
+        super(getElementExpression(owningProperty, elementProperty), 
+                elementProperty.getName(), elementProperty.getGetter(), elementProperty.getSetter(),
+                elementProperty.getType(), elementProperty.getElementType(),
+                initContainer(owningProperty, elementProperty.getExpression(), resolver)
+                );
+
+        Property element =  initElement(getContainer(), elementProperty.getExpression(), resolver);
+        if (element == null) {
+            element = elementProperty;
+        }
+        this.elementProperty = element;
+    }
+    
+    /**
+     * Returns the element expression for this property
+     * 
+     * @return the element expression for this property
+     */
+    private static String getElementExpression(Property owningProperty, Property elementProperty) {
+        int splitIndex = owningProperty.getExpression().lastIndexOf("{");
+        if (splitIndex >= 0) {
+            return owningProperty.getExpression().substring(0, splitIndex + 1) + 
+                    "{" + elementProperty.getExpression() + "}" +
+                    owningProperty.getExpression().substring(splitIndex + 1);
+        } else {
+            return owningProperty.getExpression() + "{" + elementProperty.getExpression() + "}";
+        }
+    }
+    
+    private static Property initContainer(Property owningProperty, String propertyExpression, PropertyResolverStrategy resolver) {
+        String[] parts = propertyExpression.replace("}","").split("\\{");
+        if (parts.length > 1) {
+            StringBuilder containerExpression = new StringBuilder("");
+            for (int i = parts.length -2; i >= 0; --i) {
+                String part = parts[i];
+                containerExpression.insert(0, "{" + part);
+                containerExpression.append("}");
+            }
+            Property container = "".equals(containerExpression.toString()) ? owningProperty : resolver.getProperty(owningProperty, containerExpression.toString());
+            return container;
+        } else {
+            return owningProperty;
+        }
+    }
+    
+    private static Property initElement(Property container, String propertyExpression, PropertyResolverStrategy resolver) {
+        String[] parts = propertyExpression.replace("}","").split("\\{");
+        if (parts.length > 1) {
+            return resolver.getProperty(container, "{" + parts[parts.length-1] + "}");
+        } else {
+            return null;
+        }
+    }
+  
+    /**
+     * @return the nested element property 
+     */
+    public Property getElement() {
+        return elementProperty;
+    }
+    /**
+     * @return the root container of this property
+     */
+    public Property getRootContainer() {
+        Property container = getContainer();
+        while (container.getContainer() != null) {
+            container = container.getContainer();
+        }
+        return container;
+    }
+}
