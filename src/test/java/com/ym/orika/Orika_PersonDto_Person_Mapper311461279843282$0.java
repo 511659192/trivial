@@ -21,7 +21,8 @@ public class Orika_PersonDto_Person_Mapper311461279843282$0 extends ma.glasnost.
         } else {
             new_destinationPersonalNames0 = null;}
         ma.glasnost.orika.MapEntry personalNames_destination0Element = null;
-        boolean personalNames_destination0ElementShouldBeAddedToCollector = false; if ( !(((java.util.List)source.getNames()) == null)) {
+        boolean personalNames_destination0ElementShouldBeAddedToCollector = false;
+        if ( !(((java.util.List)source.getNames()) == null)) {
 
             java.util.Iterator names_$_iter = ((java.util.List)source.getNames()).iterator();
             while (names_$_iter.hasNext()) {

@@ -102,12 +102,11 @@ public class OrikaTest {
         person.setNames(new ArrayList<Name>());
         person.getNames().add(name);
 
-        System.out.println(JSON.toJSONString(person, SerializerFeature.PrettyFormat));
         PersonDto dto = mapperFactory.getMapperFacade().map(person, PersonDto.class);
         System.out.println(JSON.toJSONString(dto, SerializerFeature.PrettyFormat));
 
-        Person person2 = mapperFactory.getMapperFacade().map(dto, Person.class);
-        System.out.println(JSON.toJSONString(person2, SerializerFeature.PrettyFormat));
+//        Person person2 = mapperFactory.getMapperFacade().map(dto, Person.class);
+//        System.out.println(JSON.toJSONString(person2, SerializerFeature.PrettyFormat));
     }
 
     @Test
