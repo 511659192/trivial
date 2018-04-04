@@ -90,7 +90,7 @@ public class OrikaTest {
         MapperFactory mapperFactory = builder.build();
         mapperFactory.classMap(Person.class, PersonDto.class)
                 .field("names{fullName}", "personalNames{key}")
-                .field("names{}", "personalNames{value}")
+                .field("names{first}", "personalNames{value}")
                 .register();
 
         Name name = new Name();

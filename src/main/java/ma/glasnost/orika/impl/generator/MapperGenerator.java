@@ -69,7 +69,9 @@ public final class MapperGenerator {
             Set<FieldMap> mappedFields = new LinkedHashSet<FieldMap>();
             mappedFields.addAll(addMapMethod(mapperCode, true, classMap, logDetails));
             mappedFields.addAll(addMapMethod(mapperCode, false, classMap, logDetails));
-            
+            System.out.println("--------------------------");
+            System.out.println(mapperCode.getSourceBuilder());
+            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^");
             GeneratedMapperBase instance = mapperCode.getInstance();
             instance.setAType(classMap.getAType());
             instance.setBType(classMap.getBType());

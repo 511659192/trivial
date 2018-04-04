@@ -87,7 +87,9 @@ public class ObjectFactoryGenerator {
             UsedMapperFacadesContext usedMapperFacades = new UsedMapperFacadesContext();
             
             addCreateMethod(factoryCode, usedTypes, usedConverters, usedMapperFacades, type, sourceType, context, logDetails);
-            
+            System.out.println("--------------------------");
+            System.out.println(factoryCode.getSourceBuilder().toString());
+            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^");
             GeneratedObjectFactory objectFactory = (GeneratedObjectFactory) factoryCode.getInstance();
             objectFactory.setMapperFacade(mapperFactory.getMapperFacade());
             
