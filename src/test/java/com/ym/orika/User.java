@@ -2,9 +2,19 @@ package com.ym.orika;
 
 import java.util.List;
 
-public class User extends Base<Integer> {
+public class User <E, M extends Runnable> extends Base<E> {
     private Long id;
     private String name;
+
+    private E e;
+
+    public E getE() {
+        return e;
+    }
+
+    public void setE(E e) {
+        this.e = e;
+    }
 
     private List<Integer> list2;
 
@@ -31,4 +41,6 @@ public class User extends Base<Integer> {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

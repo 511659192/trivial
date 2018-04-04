@@ -2,10 +2,20 @@ package com.ym.orika;
 
 import java.util.List;
 
-public class UserA extends Base<Integer> {
+public class UserA <E, M extends Runnable> extends Base<E> {
 
     private Long id;
     private String name;
+
+    private E e;
+
+    public E getE() {
+        return e;
+    }
+
+    public void setE(E e) {
+        this.e = e;
+    }
 
     private List<Integer> list2;
 

@@ -7,6 +7,7 @@ import com.google.common.collect.Maps;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
+import ma.glasnost.orika.impl.generator.JavassistCompilerStrategy;
 import ma.glasnost.orika.metadata.ClassMapBuilder;
 import org.junit.Test;
 
@@ -21,19 +22,22 @@ public class OrikaTest {
         DefaultMapperFactory.Builder builder = new DefaultMapperFactory.Builder();
         MapperFactory mapperFactory = builder.build();
         ClassMapBuilder classMapBuilder = mapperFactory.classMap(User.class, UserA.class);
-        classMapBuilder
+        classMapBuilder = classMapBuilder
 //                .field("id", "id")
 //                .field("name", "name")
-                .field("list", "list")
-                .byDefault()
-                .register();
-        User user = new User();
+                .field("list", "list");
+        classMapBuilder.byDefault();
+        classMapBuilder.register();
+        User<String, Runnable> user = new User<>();
         user.setId(123L);
         user.setName("小明");
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        user.setList(list);
-        user.setList2(list);
+        List<Integer> listInt = new ArrayList<>();
+        listInt.add(1);
+        user.setList2(listInt);
+        List<String> listStr = new ArrayList<>();
+        listStr.add("listStr");
+        user.setList(listStr);
+        user.setE("e");
         MapperFacade mapper = mapperFactory.getMapperFacade();
         UserA userA = mapper.map(user, UserA.class);
         System.out.println(JSON.toJSONString(userA));
