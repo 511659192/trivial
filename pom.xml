@@ -60,6 +60,18 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy</artifactId>
+			<version>1.5.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy-agent</artifactId>
+			<version>1.5.7</version>
+		</dependency>
+
+		<dependency>
 			<groupId>ma.glasnost.orika</groupId>
 			<artifactId>orika-core</artifactId>
 			<version>1.5.2</version><!-- or latest version -->
@@ -260,7 +272,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
+			<!--<scope>test</scope>-->
 		</dependency>
 		<!-- log4j2配置 JDK1.6只能使用2.3版本，更高版本需要JDK1.7及以上才可以 -->
 		<dependency>
@@ -514,6 +526,27 @@
 				<configuration>
 					<verbose>true</verbose>
 					<overwrite>true</overwrite>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<artifactSet>
+						<includes>
+							<include>javassist:javassist:jar:</include>
+							<include>net.bytebuddy:byte-buddy:jar:</include>
+							<include>net.bytebuddy:byte-buddy-agent:jar:</include>
+						</includes>
+					</artifactSet>
 				</configuration>
 			</plugin>
 		</plugins>
