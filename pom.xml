@@ -8,6 +8,18 @@
 	<name>trivial Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<repositories><!-- 发现依赖和扩展的远程资源库 -->
+        <repository>
+            <id>mvnrepository</id>
+            <name>mvnrepository</name>
+            <url>http://www.mvnrepository.com/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 		<repository>
 			<id>nexus</id>
 			<name>local private nexus</name>
